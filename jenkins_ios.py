@@ -11,8 +11,12 @@ class JenkinsIOSJob(object):
     def __create_ios_project(self):
         project_path = self.jenkins_params.get("project_path")
         platform = self.jenkins_params.get("platform")
+        command = 'ls -l'
+        result = subprocess.run(command, shell=True, capture_output=True, text=True)
+        os.chdir(project_path)
         cmd = f"$COCOS_CREATOR --project {project_path} --build configPath=buildConfig_${platform}.json"
-        subprocess.run(shlex.split(cmd), check=True)
+        print(cmd)
+        result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
 
     def __archive_ipa(self):
         print("run ios Pod install")
