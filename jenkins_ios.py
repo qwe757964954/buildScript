@@ -39,7 +39,7 @@ class JenkinsIOSJob(object):
         PROJECT_PATH = self.jenkins_params.get("project_path")
         BUILD_VERSION = self.jenkins_params.get("buildVer")
         VERSION = self.jenkins_params.get("version")
-        file = f"{PROJECT_PATH}/native/ios/Info.plist"
+        file = f"{PROJECT_PATH}/native/engine/ios/Info.plist"
         print(f"__setup_info_plist__, file:{file}")
         fp = open(file=file, mode='rb+')
         info_dict = plistlib.load(fp=fp)
