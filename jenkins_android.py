@@ -11,7 +11,7 @@ class JenkinsAndroidJob(object):
     def __create_android_project(self):
         project_path = self.jenkins_params.get("project_path")
         platform = self.jenkins_params.get("platform")
-        cmd = f"$COCOS_CREATOR --project {project_path} --build configPath=buildConfig_${platform}.json"
+        cmd = f"$COCOS_CREATOR --project {project_path} --build configPath=buildConfig_{platform}.json"
         result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
         if result.returncode == 0:
             output = result.stdout

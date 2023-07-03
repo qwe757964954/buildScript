@@ -12,7 +12,7 @@ class JenkinsIOSJob(object):
         project_path = self.jenkins_params.get("project_path")
         platform = self.jenkins_params.get("platform")
         os.chdir(project_path)
-        cmd = f"$COCOS_CREATOR --project {project_path} --build configPath=buildConfig_${platform}.json"
+        cmd = f"$COCOS_CREATOR --project {project_path} --build configPath=buildConfig_{platform}.json"
         print(cmd)
         result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
         if result.returncode == 0:
