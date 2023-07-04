@@ -24,11 +24,6 @@
       "inBundle": false
     },
     {
-      "url": "db://assets/scene/hall.scene",
-      "uuid": "ed3cbe3c-bd3b-4a56-a96c-7f8b30fd2db9",
-      "inBundle": false
-    },
-    {
       "url": "db://assets/game/landlord-tysanrenddz/Scene.scene",
       "uuid": "dde0ae2d-0be2-4022-b71d-304cbcd32b57",
       "inBundle": true
@@ -71,6 +66,11 @@
     {
       "url": "db://assets/test/net/TestNet.scene",
       "uuid": "d0c6fd1f-65c1-453f-9db1-f20d3ffe0864",
+      "inBundle": false
+    },
+    {
+      "url": "db://assets/test/pageview/pageview.scene",
+      "uuid": "4ebc0eeb-2f37-4ed5-8bcd-7e292e3c355d",
       "inBundle": false
     },
     {
@@ -192,7 +192,7 @@
     },
     "native": {
       "encrypted": false,
-      "xxteaKey": "5bz+zZ5AVNKo4x8i",
+      "xxteaKey": "a8VKXB/wJMXaHihj",
       "compressZip": false,
       "JobSystem": "none",
       "__version__": "1.0.2"
