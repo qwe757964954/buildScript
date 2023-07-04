@@ -54,7 +54,7 @@ class JenkinsAndroidJob(object):
             print("buildConfig_ios file not exist")
             exit(0)
 
-        # self.__create_android_project()
+        self.__create_android_project()
         print("create build android project finish")
         self.__build_apk()
         print("build android apk finish")
