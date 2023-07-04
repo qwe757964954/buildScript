@@ -23,7 +23,11 @@ node_modules/
 # WebStorm
 #//////////////////////////
 .idea/
-
+*.ipa
+*.apk
+*.xcarchive
+*.plist
+*.log
 # 266
 assets/resources/proto*
 
