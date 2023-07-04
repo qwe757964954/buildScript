@@ -26,7 +26,7 @@ class JenkinsIOSJob(object):
         os.chdir(PROJECT_PATH + "/build/ios/proj")
 
         tz_utc_8 = timezone(timedelta(hours=8))
-        date_str = datetime.utcnow().replace(tzinfo=tz_utc_8).strftime("%Y-%m-%d %H-%M-%S")
+        date_str = datetime.utcnow().replace(tzinfo=tz_utc_8).strftime("%Y-%m-%d-%H-%M-%S")
 
         cmd = f"pod install --repo-update"
         subprocess.run(shlex.split(cmd), check=True)

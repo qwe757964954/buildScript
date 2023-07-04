@@ -27,7 +27,7 @@ class JenkinsAndroidJob(object):
         os.chdir(ANDROID_PRO_PATH)
         BUILD_TYPE = "Release"
         tz_utc_8 = timezone(timedelta(hours=8))
-        date_str = datetime.utcnow().replace(tzinfo=tz_utc_8).strftime("%Y-%m-%d %H-%M-%S")
+        date_str = datetime.utcnow().replace(tzinfo=tz_utc_8).strftime("%Y-%m-%d-%H-%M-%S")
         output_apk = f"{ANDROID_PRO_PATH}/build/266/outputs/apk/boyaaPlugin/{BUILD_TYPE}/266-boyaaPlugin-{BUILD_TYPE}.apk"
         output_file= f"{PROJECT_PATH}/pack/{date_str}"
 
