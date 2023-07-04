@@ -4,6 +4,7 @@ import subprocess
 import shlex
 import plistlib
 import shutil
+from datetime import datetime, timedelta, timezone
 class JenkinsIOSJob(object):
     def __init__(self, args):
         super(JenkinsIOSJob, self).__init__()
@@ -13,10 +14,9 @@ class JenkinsIOSJob(object):
         project_path = self.jenkins_params.get("project_path")
         platform = self.jenkins_params.get("platform")
         env_vars = {'LC_ALL': 'en_US.UTF-8','LANG': 'en_US.UTF-8','LANGUAGE': 'en_US.UTF-8'}
-        subprocess.run(shlex.split('source ~/.bash_profile'),env=env_vars)
         os.chdir(f"{project_path}/pack")
         COCOS_CREATOR=os.environ.get('COCOS_CREATOR')
-        cmd = f'{COCOS_CREATOR} --project {project_path} --build "configPath=buildConfig_{platform}.json"'
+        cmd = f'{COCOS_CREATOR}  --project {project_path} --build "configPath=buildConfig_{platform}.json"'
         print(cmd)
         subprocess.run(shlex.split(cmd),env=env_vars)
 
@@ -24,17 +24,21 @@ class JenkinsIOSJob(object):
         print("run ios Pod install")
         PROJECT_PATH = self.jenkins_params.get("project_path")
         os.chdir(PROJECT_PATH + "/build/ios/proj")
+
+        tz_utc_8 = timezone(timedelta(hours=8))
+        date_str = datetime.utcnow().replace(tzinfo=tz_utc_8).strftime("%Y-%m-%d")
+
         cmd = f"pod install --repo-update"
         subprocess.run(shlex.split(cmd), check=True)
         BUILD_TYPE = "Release"
         SCHEME_NAME="266"
         WORKSPACE_PATH= f"{PROJECT_PATH}/build/ios/proj/{SCHEME_NAME}.xcworkspace"
-        PRODUCT_PATH= f"{PROJECT_PATH}/pack/pack"
+        PRODUCT_PATH= f"{PROJECT_PATH}/pack/{date_str}"
         ARCHIVE_PATH= f"{PRODUCT_PATH}/{SCHEME_NAME}.xcarchive"
         EXPORTOPTIONSPLIST_PATH= f"{PROJECT_PATH}/pack/ExportOptions.plist"
-        if os.path.exists(PRODUCT_PATH):
-            print("文件夹存在")
-            shutil.rmtree(PRODUCT_PATH)
+        # if os.path.exists(PRODUCT_PATH):
+        #     print("文件夹存在")
+        #     shutil.rmtree(PRODUCT_PATH)
         
         cmd = f"xcodebuild clean -workspace {WORKSPACE_PATH} -scheme {SCHEME_NAME} -configuration {BUILD_TYPE}"
         subprocess.run(shlex.split(cmd), check=True)
