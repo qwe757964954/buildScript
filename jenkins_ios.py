@@ -3,6 +3,7 @@ import json
 import subprocess
 import shlex
 import plistlib
+import shutil
 class JenkinsIOSJob(object):
     def __init__(self, args):
         super(JenkinsIOSJob, self).__init__()
@@ -12,6 +13,7 @@ class JenkinsIOSJob(object):
         project_path = self.jenkins_params.get("project_path")
         platform = self.jenkins_params.get("platform")
         env_vars = {'LC_ALL': 'en_US.UTF-8','LANG': 'en_US.UTF-8','LANGUAGE': 'en_US.UTF-8'}
+        subprocess.run(shlex.split('source ~/.bash_profile'),env=env_vars)
         os.chdir(f"{project_path}/pack")
         COCOS_CREATOR=os.environ.get('COCOS_CREATOR')
         cmd = f'{COCOS_CREATOR} --project {project_path} --build "configPath=buildConfig_{platform}.json"'
@@ -30,6 +32,10 @@ class JenkinsIOSJob(object):
         PRODUCT_PATH= f"{PROJECT_PATH}/pack/pack"
         ARCHIVE_PATH= f"{PRODUCT_PATH}/{SCHEME_NAME}.xcarchive"
         EXPORTOPTIONSPLIST_PATH= f"{PROJECT_PATH}/pack/ExportOptions.plist"
+        if os.path.exists(PRODUCT_PATH):
+            print("文件夹存在")
+            shutil.rmtree(PRODUCT_PATH)
+        
         cmd = f"xcodebuild clean -workspace {WORKSPACE_PATH} -scheme {SCHEME_NAME} -configuration {BUILD_TYPE}"
         subprocess.run(shlex.split(cmd), check=True)
         cmd = f"xcodebuild -project 266.xcodeproj -target plugin_registry -configuration {BUILD_TYPE}"
