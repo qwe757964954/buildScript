@@ -11,11 +11,13 @@ class JenkinsAndroidJob(object):
     def __create_android_project(self):
         project_path = self.jenkins_params.get("project_path")
         platform = self.jenkins_params.get("platform")
-        configPath = f"{project_path}/pack/buildConfig_{platform}.json"
+        env_vars = {'LC_ALL': 'en_US.UTF-8','LANG': 'en_US.UTF-8','LANGUAGE': 'en_US.UTF-8'}
+        os.chdir(f"{project_path}/pack")
         COCOS_CREATOR=os.environ.get('COCOS_CREATOR')
-        cmd = f"{COCOS_CREATOR} --project {project_path} --build configPath={configPath}"
+        cmd = f'{COCOS_CREATOR} --project {project_path} --build "configPath=buildConfig_{platform}.json"'
         print(cmd)
-        subprocess.run(shlex.split(cmd), check=True, env=os.environ)
+        subprocess.run(cmd, shell=True, check=True,env=env_vars)
+        
 
     def __build_apk(self):
         PROJECT_PATH = self.jenkins_params.get("project_path")

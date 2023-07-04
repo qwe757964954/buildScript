@@ -11,38 +11,33 @@ class JenkinsIOSJob(object):
     def __create_ios_project(self):
         project_path = self.jenkins_params.get("project_path")
         platform = self.jenkins_params.get("platform")
-        configPath = f"{project_path}/pack/buildConfig_{platform}.json"
-        # subprocess.run(f'source ~/.bash_profile', shell=True)
-        # subprocess.run(f'source ~/.zshrc', shell=True)
+        env_vars = {'LC_ALL': 'en_US.UTF-8','LANG': 'en_US.UTF-8','LANGUAGE': 'en_US.UTF-8'}
         os.chdir(f"{project_path}/pack")
-        # COCOS_CREATOR=os.environ.get('COCOS_CREATOR')
-        # print(COCOS_CREATOR)
-        # cmd = '${COCOS_CREATOR} --project {project_path} --build "configPath=buildConfig_{platform}.json"'
-        # print(cmd)
-        cmd = f"sh create_project.sh {project_path} {platform}"
+        COCOS_CREATOR=os.environ.get('COCOS_CREATOR')
+        cmd = f'{COCOS_CREATOR} --project {project_path} --build "configPath=buildConfig_{platform}.json"'
         print(cmd)
-        os.system(cmd)
+        subprocess.run(shlex.split(cmd),env=env_vars)
 
     def __archive_ipa(self):
         print("run ios Pod install")
         PROJECT_PATH = self.jenkins_params.get("project_path")
         os.chdir(PROJECT_PATH + "/build/ios/proj")
         cmd = f"pod install --repo-update"
-        subprocess.run(shlex.split(cmd), check=True, env=os.environ)
+        subprocess.run(shlex.split(cmd), check=True)
         BUILD_TYPE = "Release"
         SCHEME_NAME="266"
-        WORKSPACE_PATH= f"{PROJECT_PATH}/SCHEME_NAME.xcworkspace"
+        WORKSPACE_PATH= f"{PROJECT_PATH}/build/ios/proj/{SCHEME_NAME}.xcworkspace"
         PRODUCT_PATH= f"{PROJECT_PATH}/pack/pack"
         ARCHIVE_PATH= f"{PRODUCT_PATH}/{SCHEME_NAME}.xcarchive"
         EXPORTOPTIONSPLIST_PATH= f"{PROJECT_PATH}/pack/ExportOptions.plist"
-        cmd = f"xcodebuild clean -workspace ${WORKSPACE_PATH} -scheme ${SCHEME_NAME} -configuration ${BUILD_TYPE} || exit"
-        subprocess.run(shlex.split(cmd), check=True, env=os.environ)
+        cmd = f"xcodebuild clean -workspace {WORKSPACE_PATH} -scheme {SCHEME_NAME} -configuration {BUILD_TYPE}"
+        subprocess.run(shlex.split(cmd), check=True)
         cmd = f"xcodebuild -project 266.xcodeproj -target plugin_registry -configuration {BUILD_TYPE}"
-        subprocess.run(shlex.split(cmd), check=True, env=os.environ)
-        cmd = f"xcodebuild archive -workspace ${WORKSPACE_PATH} -scheme ${SCHEME_NAME} -archivePath ${ARCHIVE_PATH} -quiet || exit"
-        subprocess.run(shlex.split(cmd), check=True, env=os.environ)
-        cmd = f"xcodebuild -exportArchive -archivePath $ARCHIVE_PATH -exportPath ${PRODUCT_PATH} -exportOptionsPlist ${EXPORTOPTIONSPLIST_PATH} -quiet || exit"
-        subprocess.run(shlex.split(cmd), check=True, env=os.environ)
+        subprocess.run(shlex.split(cmd), check=True)
+        cmd = f"xcodebuild archive -workspace {WORKSPACE_PATH} -scheme {SCHEME_NAME} -archivePath {ARCHIVE_PATH}"
+        subprocess.run(shlex.split(cmd), check=True)
+        cmd = f"xcodebuild -exportArchive -archivePath {ARCHIVE_PATH} -exportPath {PRODUCT_PATH} -exportOptionsPlist {EXPORTOPTIONSPLIST_PATH}"
+        subprocess.run(shlex.split(cmd), check=True)
     
     def __setup_info_plist__(self):
         PROJECT_PATH = self.jenkins_params.get("project_path")
@@ -69,7 +64,7 @@ class JenkinsIOSJob(object):
             exit(0)
         self.__setup_info_plist__()
         print("setip info plist ")
-        # self.__create_ios_project()
+        self.__create_ios_project()
         print("create ios project finish")
         self.__archive_ipa()
         print("archive ipa finish")

@@ -1,0 +1,37 @@
+
+#///////////////////////////
+# Cocos Creator 3D Project
+#///////////////////////////
+library/
+temp/
+local/
+build/
+profiles/
+pack/
+#//////////////////////////
+# NPM
+#//////////////////////////
+node_modules/
+
+#//////////////////////////
+# VSCode
+#//////////////////////////
+.vscode/
+*.code-workspace
+
+#//////////////////////////
+# WebStorm
+#//////////////////////////
+.idea/
+
+# 266
+assets/resources/proto*
+
+*.DS_Store
+remote-assets
+
+.gradle/
+
+# 因为每个人装的node版本不一样，导致lock文件不同，所以干脆不提交
+/package-lock.json
+/pnpm-lock.yaml
