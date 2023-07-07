@@ -34,8 +34,28 @@
       "inBundle": true
     },
     {
+      "url": "db://assets/test/anim/DDZ_huosheng.scene",
+      "uuid": "89f777b3-a005-453b-bbc1-93b7a9475031",
+      "inBundle": false
+    },
+    {
+      "url": "db://assets/test/boundingBox/boundingBoxTest.scene",
+      "uuid": "2869de6e-514a-4cea-a8e3-e59d734f0452",
+      "inBundle": false
+    },
+    {
+      "url": "db://assets/test/camera/cameraDemo.scene",
+      "uuid": "650abdd3-c8ce-43c5-902b-3726b9927240",
+      "inBundle": false
+    },
+    {
       "url": "db://assets/test/device/TestDevice.scene",
       "uuid": "448df3de-e0f8-4dc0-99e8-55ac9a271e60",
+      "inBundle": false
+    },
+    {
+      "url": "db://assets/test/gardient/gardientDemo.scene",
+      "uuid": "da3d059a-617f-4614-b9ef-7dd5baa3e802",
       "inBundle": false
     },
     {
@@ -164,10 +184,10 @@
       "inBundle": true
     }
   ],
-  "web-desktop": [],
+  "ios": [],
   "packages": {
     "ios": {
-      "packageName": "com.boyaa.mobile.oa",
+      "packageName": "com.boyaa.266cocos.cn",
       "renderBackEnd": {
         "metal": true
       },
@@ -188,16 +208,16 @@
     },
     "cocos-service": {
       "configID": "1d2b28",
-      "services": []
+      "services": [],
+      "__version__": "3.0.7"
     },
     "native": {
       "encrypted": false,
-      "xxteaKey": "a8VKXB/wJMXaHihj",
+      "xxteaKey": "e3eDwQaEhDYZSnLU",
       "compressZip": false,
       "JobSystem": "none",
       "__version__": "1.0.2"
     }
   },
-  "__version__": "1.3.5",
-  "ios": []
+  "__version__": "1.3.5"
 }

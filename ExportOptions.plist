@@ -10,8 +10,8 @@
 	<string>development</string>
 	<key>provisioningProfiles</key>
 	<dict>
-		<key>com.boyaa.mobile.oa</key>
-		<string>yidongdev</string>
+		<key>com.boyaa.266cocos.cn</key>
+		<string>cocosdevice</string>
 	</dict>
 	<key>signingCertificate</key>
 	<string>Apple Development</string>
