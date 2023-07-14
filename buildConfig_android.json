@@ -24,9 +24,14 @@
       "inBundle": false
     },
     {
-      "url": "db://assets/scene/hall.scene",
-      "uuid": "ed3cbe3c-bd3b-4a56-a96c-7f8b30fd2db9",
-      "inBundle": false
+      "url": "db://assets/game/dummy/Scene.scene",
+      "uuid": "d3703cf7-ec13-4539-abb4-6146cbedb738",
+      "inBundle": true
+    },
+    {
+      "url": "db://assets/game/kaeng/Scene.scene",
+      "uuid": "63cc0ab8-fea9-4359-a9e7-3806c0addd9b",
+      "inBundle": true
     },
     {
       "url": "db://assets/game/landlord-tysanrenddz/Scene.scene",
@@ -37,6 +42,21 @@
       "url": "db://assets/game/mahjong-hnxinxiang/Scene.scene",
       "uuid": "0e297def-192f-44ad-bad2-db1798df35f6",
       "inBundle": true
+    },
+    {
+      "url": "db://assets/test/anim/DDZ_huosheng.scene",
+      "uuid": "89f777b3-a005-453b-bbc1-93b7a9475031",
+      "inBundle": false
+    },
+    {
+      "url": "db://assets/test/boundingBox/boundingBoxTest.scene",
+      "uuid": "2869de6e-514a-4cea-a8e3-e59d734f0452",
+      "inBundle": false
+    },
+    {
+      "url": "db://assets/test/camera/cameraDemo.scene",
+      "uuid": "650abdd3-c8ce-43c5-902b-3726b9927240",
+      "inBundle": false
     },
     {
       "url": "db://assets/test/device/TestDevice.scene",
@@ -71,6 +91,11 @@
     {
       "url": "db://assets/test/net/TestNet.scene",
       "uuid": "d0c6fd1f-65c1-453f-9db1-f20d3ffe0864",
+      "inBundle": false
+    },
+    {
+      "url": "db://assets/test/pageview/pageview.scene",
+      "uuid": "4ebc0eeb-2f37-4ed5-8bcd-7e292e3c355d",
       "inBundle": false
     },
     {
@@ -116,6 +141,11 @@
     {
       "url": "db://assets/test/tweenTest/TweenTest.scene",
       "uuid": "a665504a-f1e8-4a1c-904e-7813acb40124",
+      "inBundle": false
+    },
+    {
+      "url": "db://assets/test/xlabel/scene.scene",
+      "uuid": "4de7ca46-192a-4f4c-b1ee-7e5e7a2e2979",
       "inBundle": false
     },
     {
@@ -203,7 +233,7 @@
     },
     "native": {
       "encrypted": false,
-      "xxteaKey": "5bz+zZ5AVNKo4x8i",
+      "xxteaKey": "05PDItLZpLgKkQqh",
       "compressZip": false,
       "JobSystem": "none",
       "__version__": "1.0.2"

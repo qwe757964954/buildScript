@@ -24,6 +24,16 @@
       "inBundle": false
     },
     {
+      "url": "db://assets/game/dummy/Scene.scene",
+      "uuid": "d3703cf7-ec13-4539-abb4-6146cbedb738",
+      "inBundle": true
+    },
+    {
+      "url": "db://assets/game/kaeng/Scene.scene",
+      "uuid": "63cc0ab8-fea9-4359-a9e7-3806c0addd9b",
+      "inBundle": true
+    },
+    {
       "url": "db://assets/game/landlord-tysanrenddz/Scene.scene",
       "uuid": "dde0ae2d-0be2-4022-b71d-304cbcd32b57",
       "inBundle": true
@@ -51,11 +61,6 @@
     {
       "url": "db://assets/test/device/TestDevice.scene",
       "uuid": "448df3de-e0f8-4dc0-99e8-55ac9a271e60",
-      "inBundle": false
-    },
-    {
-      "url": "db://assets/test/gardient/gardientDemo.scene",
-      "uuid": "da3d059a-617f-4614-b9ef-7dd5baa3e802",
       "inBundle": false
     },
     {
@@ -139,6 +144,11 @@
       "inBundle": false
     },
     {
+      "url": "db://assets/test/xlabel/scene.scene",
+      "uuid": "4de7ca46-192a-4f4c-b1ee-7e5e7a2e2979",
+      "inBundle": false
+    },
+    {
       "url": "db://assets/test/yogatest/scene.scene",
       "uuid": "afad1c73-82f9-4472-8d40-cdd12947d5ac",
       "inBundle": false
@@ -213,7 +223,7 @@
     },
     "native": {
       "encrypted": false,
-      "xxteaKey": "e3eDwQaEhDYZSnLU",
+      "xxteaKey": "05PDItLZpLgKkQqh",
       "compressZip": false,
       "JobSystem": "none",
       "__version__": "1.0.2"
