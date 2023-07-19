@@ -49,7 +49,7 @@ class JenkinsMACJob(object):
         cmd = f"xcodebuild -project 266.xcodeproj -target plugin_registry -configuration {BUILD_TYPE}"
         subprocess.run(shlex.split(cmd), check=True)
         
-        cmd = f"xcodebuild archive -project {PROJECT_PROJ_PATH} -scheme {SCHEME_NAME} -archivePath {ARCHIVE_PATH}"
+        cmd = f"xcodebuild archive -project {SCHEME_NAME}.xcodeproj -scheme {TARGET_NAME} -archivePath {ARCHIVE_PATH}"
         subprocess.run(shlex.split(cmd), check=True)
         cmd = f"xcodebuild -exportArchive -archivePath {ARCHIVE_PATH} -exportPath {PRODUCT_PATH} -exportOptionsPlist {EXPORTOPTIONSPLIST_PATH}"
         subprocess.run(shlex.split(cmd), check=True)

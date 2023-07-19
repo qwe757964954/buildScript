@@ -27,6 +27,7 @@ node_modules/
 *.apk
 *.xcarchive
 *.plist
+*.app
 *.log
 # 266
 assets/resources/proto*
