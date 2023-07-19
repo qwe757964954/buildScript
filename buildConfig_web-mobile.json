@@ -1,0 +1,231 @@
+{
+  "name": "266",
+  "platform": "web-mobile",
+  "buildPath": "project://build",
+  "debug": false,
+  "md5Cache": false,
+  "skipCompressTexture": false,
+  "sourceMaps": false,
+  "polyfills": {
+    "asyncFunctions": true
+  },
+  "experimentalEraseModules": false,
+  "useBuiltinServer": true,
+  "mainBundleIsRemote": false,
+  "mainBundleCompressionType": "merge_dep",
+  "useSplashScreen": true,
+  "packAutoAtlas": true,
+  "startScene": "762c0cf3-2364-4036-8964-9f8e80660d9a",
+  "outputName": "web-mobile",
+  "scenes": [
+    {
+      "url": "db://assets/launch/Launch.scene",
+      "uuid": "762c0cf3-2364-4036-8964-9f8e80660d9a",
+      "inBundle": false
+    },
+    {
+      "url": "db://assets/game/dummy/Scene.scene",
+      "uuid": "d3703cf7-ec13-4539-abb4-6146cbedb738",
+      "inBundle": true
+    },
+    {
+      "url": "db://assets/game/kaeng/Scene.scene",
+      "uuid": "63cc0ab8-fea9-4359-a9e7-3806c0addd9b",
+      "inBundle": true
+    },
+    {
+      "url": "db://assets/game/landlord-tysanrenddz/Scene.scene",
+      "uuid": "dde0ae2d-0be2-4022-b71d-304cbcd32b57",
+      "inBundle": true
+    },
+    {
+      "url": "db://assets/game/mahjong-hnxinxiang/Scene.scene",
+      "uuid": "0e297def-192f-44ad-bad2-db1798df35f6",
+      "inBundle": true
+    },
+    {
+      "url": "db://assets/test/anim/DDZ_huosheng.scene",
+      "uuid": "89f777b3-a005-453b-bbc1-93b7a9475031",
+      "inBundle": false
+    },
+    {
+      "url": "db://assets/test/boundingBox/boundingBoxTest.scene",
+      "uuid": "2869de6e-514a-4cea-a8e3-e59d734f0452",
+      "inBundle": false
+    },
+    {
+      "url": "db://assets/test/camera/cameraDemo.scene",
+      "uuid": "650abdd3-c8ce-43c5-902b-3726b9927240",
+      "inBundle": false
+    },
+    {
+      "url": "db://assets/test/device/TestDevice.scene",
+      "uuid": "448df3de-e0f8-4dc0-99e8-55ac9a271e60",
+      "inBundle": false
+    },
+    {
+      "url": "db://assets/test/graphics/scene.scene",
+      "uuid": "47a66780-f4a1-476c-b332-6eddc4fa2c01",
+      "inBundle": false
+    },
+    {
+      "url": "db://assets/test/hotupdate/TestHotUpdate.scene",
+      "uuid": "b75a4c67-a660-44ee-abd1-6e936a9b04c9",
+      "inBundle": false
+    },
+    {
+      "url": "db://assets/test/loadTest/loadTest.scene",
+      "uuid": "545a185f-1b7e-43c0-a6ff-bf7a1aa69434",
+      "inBundle": true
+    },
+    {
+      "url": "db://assets/test/maskRounded/MaskTestScene.scene",
+      "uuid": "eafcb605-d6b9-4d0a-abdf-2feff2bbd7c0",
+      "inBundle": false
+    },
+    {
+      "url": "db://assets/test/material/materialDemo.scene",
+      "uuid": "8cd8078d-a438-4148-8928-25708d02ca06",
+      "inBundle": false
+    },
+    {
+      "url": "db://assets/test/net/TestNet.scene",
+      "uuid": "d0c6fd1f-65c1-453f-9db1-f20d3ffe0864",
+      "inBundle": false
+    },
+    {
+      "url": "db://assets/test/pageview/pageview.scene",
+      "uuid": "4ebc0eeb-2f37-4ed5-8bcd-7e292e3c355d",
+      "inBundle": false
+    },
+    {
+      "url": "db://assets/test/perspGallery/perspGallery.scene",
+      "uuid": "f209b2e3-5431-4622-af92-0077524fb13a",
+      "inBundle": false
+    },
+    {
+      "url": "db://assets/test/perspGallery/perspGallery222.scene",
+      "uuid": "b01704c1-cd2c-4f03-9f59-64882b834599",
+      "inBundle": false
+    },
+    {
+      "url": "db://assets/test/perspGallery/tttt.scene",
+      "uuid": "0cc3d44a-9c30-4ebf-93ce-333547d13e1a",
+      "inBundle": false
+    },
+    {
+      "url": "db://assets/test/perspect2D/perspDemo.scene",
+      "uuid": "b73eec7f-5434-4981-ac64-c76abd56b76c",
+      "inBundle": false
+    },
+    {
+      "url": "db://assets/test/qsdk/qsdk.scene",
+      "uuid": "3d663bc7-5b25-4b57-9726-c46e842d235f",
+      "inBundle": false
+    },
+    {
+      "url": "db://assets/test/renderTexture/RttScene.scene",
+      "uuid": "45ff1812-a2ad-436a-8d74-894bbe0e5cc5",
+      "inBundle": false
+    },
+    {
+      "url": "db://assets/test/scrollview/scene.scene",
+      "uuid": "cbf77c0f-a10a-4666-af47-fb3db52311ca",
+      "inBundle": false
+    },
+    {
+      "url": "db://assets/test/sql/TestSQL.scene",
+      "uuid": "c686bb66-ebf0-4af4-b793-bf4d47674ad5",
+      "inBundle": false
+    },
+    {
+      "url": "db://assets/test/tabBarPrefab/TabBarTestScene.scene",
+      "uuid": "985aea29-186f-4a49-b56d-2dbbe48135e9",
+      "inBundle": false
+    },
+    {
+      "url": "db://assets/test/tableview/scene.scene",
+      "uuid": "a05ea3ea-91ea-4c8e-ae3b-02e6952095ad",
+      "inBundle": false
+    },
+    {
+      "url": "db://assets/test/tableview/tableviewSection.scene",
+      "uuid": "0d5c1d83-eb5b-4314-8eeb-364d529157fa",
+      "inBundle": false
+    },
+    {
+      "url": "db://assets/test/tableview/tableviewtest.scene",
+      "uuid": "c89564e6-624e-40dc-a548-475f879a7854",
+      "inBundle": false
+    },
+    {
+      "url": "db://assets/test/tweenTest/TweenTest.scene",
+      "uuid": "a665504a-f1e8-4a1c-904e-7813acb40124",
+      "inBundle": false
+    },
+    {
+      "url": "db://assets/test/xlabel/scene.scene",
+      "uuid": "4de7ca46-192a-4f4c-b1ee-7e5e7a2e2979",
+      "inBundle": false
+    },
+    {
+      "url": "db://assets/test/yogatest/scene.scene",
+      "uuid": "afad1c73-82f9-4472-8d40-cdd12947d5ac",
+      "inBundle": false
+    },
+    {
+      "url": "db://assets/app/modules/gamepage/Game.scene",
+      "uuid": "54ea42f3-3e0b-498f-8f20-c609a8f60d52",
+      "inBundle": true
+    },
+    {
+      "url": "db://assets/app/modules/homepage/Home.scene",
+      "uuid": "3cacc4ee-4581-4cd2-9308-25bc4c1fa386",
+      "inBundle": true
+    },
+    {
+      "url": "db://assets/app/modules/login/Login.scene",
+      "uuid": "a26dea17-0351-404c-a3c9-88f9b4b8df25",
+      "inBundle": true
+    },
+    {
+      "url": "db://assets/app/modules/mall/Mall.scene",
+      "uuid": "2c4ce196-d382-4e80-9a7e-a5d1152e5d49",
+      "inBundle": true
+    },
+    {
+      "url": "db://assets/app/modules/prizeCenter/prizeCenter.scene",
+      "uuid": "0f86d099-2813-464b-897a-5f244fa82a21",
+      "inBundle": true
+    },
+    {
+      "url": "db://assets/test/blending/Baojingqi/blending.scene",
+      "uuid": "cbb9774e-4f3a-4ff0-ac51-4cf6e23446e9",
+      "inBundle": false
+    },
+    {
+      "url": "db://assets/app/modules/match/matchList/MatchList.scene",
+      "uuid": "5618739e-cb3d-40cd-aa6f-cd331d4b8fcb",
+      "inBundle": true
+    },
+    {
+      "url": "db://assets/app/modules/match/officialMatch/OfficialMatch.scene",
+      "uuid": "429f39dc-11ab-4c60-b102-672af7924889",
+      "inBundle": true
+    }
+  ],
+  "web-mobile": [],
+  "packages": {
+    "web-mobile": {
+      "orientation": "portrait",
+      "embedWebDebugger": true,
+      "__version__": "1.0.1"
+    },
+    "cocos-service": {
+      "configID": "1d2b28",
+      "services": [],
+      "__version__": "3.0.7"
+    }
+  },
+  "__version__": "1.3.5"
+}

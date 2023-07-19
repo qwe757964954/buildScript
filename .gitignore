@@ -8,6 +8,9 @@ local/
 build/
 profiles/
 pack/
+
+web-desktop/
+web-mobile/
 #//////////////////////////
 # NPM
 #//////////////////////////
