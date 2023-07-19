@@ -44,8 +44,8 @@ class JenkinsMACJob(object):
         
         # cmd = f"xcodebuild clean -workspace {WORKSPACE_PATH} -scheme {SCHEME_NAME} -configuration {BUILD_TYPE}"
         # subprocess.run(shlex.split(cmd), check=True)
-        cmd = f"xcodebuild clean -project {SCHEME_NAME}.xcodeproj -configuration {BUILD_TYPE} -target {TARGET_NAME}"
-        subprocess.run(shlex.split(cmd), check=True)
+        # cmd = f"xcodebuild clean -project {SCHEME_NAME}.xcodeproj -configuration {BUILD_TYPE} -target {TARGET_NAME}"
+        # subprocess.run(shlex.split(cmd), check=True)
         cmd = f"xcodebuild -project 266.xcodeproj -target plugin_registry -configuration {BUILD_TYPE}"
         subprocess.run(shlex.split(cmd), check=True)
         
