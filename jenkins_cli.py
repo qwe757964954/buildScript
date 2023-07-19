@@ -33,6 +33,10 @@ class JenkinsJob(object):
             self.__build_iOS()
         elif platform == "mac":
             self.__build_Mac()
+        elif platform == "web-desktop":
+            self.__build_web_desktop()
+        elif platform == "web-mobile":
+            self.__build_web_mobile()
     def __build_android(self):
         print(self.jenkins_params)
         job = JenkinsAndroidJob(self.jenkins_params)
@@ -45,7 +49,14 @@ class JenkinsJob(object):
         print(self.jenkins_params)
         job = JenkinsIOSJob(self.jenkins_params)
         job.run()
-
+    def __build_web_desktop(self):
+        print(self.jenkins_params)
+        job = JenkinsIOSJob(self.jenkins_params)
+        job.run()
+    def __build_web_mobile(self):
+        print(self.jenkins_params)
+        job = JenkinsIOSJob(self.jenkins_params)
+        job.run()
 
 if __name__ == '__main__':
     job = JenkinsJob(sys.argv)
