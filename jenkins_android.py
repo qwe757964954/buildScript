@@ -5,6 +5,27 @@ import shlex
 import shutil
 from pathlib import Path
 from datetime import datetime, timedelta, timezone
+
+ #替换字符串
+def replace_project_pbxproj(filepath, key_string, value_string):
+    if key_string is None or value_string is None:
+        raise TypeError
+
+    content = ""
+    f1 = open(filepath, "rb")
+    for line in f1:
+        strline = line.decode('utf8')
+        if key_string in strline:
+            str_arr = strline.split(key_string)
+            new_line_str = str_arr[0] + key_string + " " + value_string + "\n"
+            content += new_line_str
+        else:
+            content += strline
+    f1.close()
+    f2 = open(filepath, "wb")
+    f2.write(content.encode('utf8'))
+    f2.close()
+
 class JenkinsAndroidJob(object):
     def __init__(self, args):
         super(JenkinsAndroidJob, self).__init__()
@@ -46,6 +67,15 @@ class JenkinsAndroidJob(object):
 
         # cmd = f"./gradlew clean && ./gradlew 266:buildEnv && ./gradlew assembleBoyaaPluginDebug && ./gradlew --no-daemon assembleRelease --stacktrace"
         # subprocess.run(shlex.split(build_cmd), check=True)
+    def __modify_android_version(self):
+        project_path = self.jenkins_params.get("project_path")
+        version_path = os.path.join(project_path, f"native/engine/android/app/version.properties")
+        BUILD_VERSION = self.jenkins_params.get("buildVer")
+        VERSION = self.jenkins_params.get("version")
+
+        replace_project_pbxproj(version_path,"version.name=",f"{VERSION}")
+        replace_project_pbxproj(version_path,"version.code=",f"{BUILD_VERSION}")
+
     def run(self):
         jsonFile = "./pack/buildConfig_android.json"
         if os.path.isfile(jsonFile):
@@ -53,7 +83,8 @@ class JenkinsAndroidJob(object):
         else:
             print("buildConfig_ios file not exist")
             exit(0)
-
+        self.__modify_android_version()
+        print("modify android version finish")
         self.__create_android_project()
         print("create build android project finish")
         self.__build_apk()
