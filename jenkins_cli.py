@@ -5,7 +5,9 @@ import json
 import traceback
 from jenkins_ios import JenkinsIOSJob
 from jenkins_android import JenkinsAndroidJob
-from jenkins_mac import JenkinsMACJob
+from jenkins_mac import JenkinsMACJob  
+from jenkins_web_desktop import JenkinsWebDesktopJob
+from jenkins_web_mobile import JenkinsWebMobileJob
 
 class JenkinsJob(object):
     # 构造方法
@@ -51,11 +53,11 @@ class JenkinsJob(object):
         job.run()
     def __build_web_desktop(self):
         print(self.jenkins_params)
-        job = JenkinsIOSJob(self.jenkins_params)
+        job = JenkinsWebDesktopJob(self.jenkins_params)
         job.run()
     def __build_web_mobile(self):
         print(self.jenkins_params)
-        job = JenkinsIOSJob(self.jenkins_params)
+        job = JenkinsWebMobileJob(self.jenkins_params)
         job.run()
 
 if __name__ == '__main__':
