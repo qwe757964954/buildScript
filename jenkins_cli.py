@@ -5,7 +5,7 @@ import json
 import traceback
 from jenkins_ios import JenkinsIOSJob
 from jenkins_android import JenkinsAndroidJob
-
+from jenkins_mac import JenkinsMACJob
 
 class JenkinsJob(object):
     # 构造方法
@@ -31,9 +31,15 @@ class JenkinsJob(object):
             self.__build_android()
         elif platform == "ios":
             self.__build_iOS()
+        elif platform == "mac":
+            self.__build_Mac()
     def __build_android(self):
         print(self.jenkins_params)
         job = JenkinsAndroidJob(self.jenkins_params)
+        job.run()
+    def __build_Mac(self):
+        print(self.jenkins_params)
+        job = JenkinsMACJob(self.jenkins_params)
         job.run()
     def __build_iOS(self):
         print(self.jenkins_params)
