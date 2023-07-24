@@ -66,6 +66,17 @@ class JenkinsIOSJob(object):
         fp.truncate()
         fp.close()
         pass
+    
+    def __copy_ios_xcodeproj(self):
+        PROJECT_PATH = self.jenkins_params.get("project_path")
+        # 源文件夹路径
+        source_folder = f"{PROJECT_PATH}/native/engine/ios/266.xcodeproj"
+
+        # 目标文件夹路径
+        destination_folder = f"{PROJECT_PATH}/build/ios/proj/266.xcodeproj"
+
+        # 拷贝文件夹
+        shutil.copytree(source_folder, destination_folder)
 
     def run(self):
         jsonFile = "./pack/buildConfig_ios.json"
@@ -78,5 +89,7 @@ class JenkinsIOSJob(object):
         print("setip info plist ")
         self.__create_ios_project()
         print("create ios project finish")
+        self.__copy_ios_xcodeproj()
+        print("copy ios project finish")
         self.__archive_ipa()
         print("archive ipa finish")
